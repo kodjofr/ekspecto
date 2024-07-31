@@ -2,27 +2,50 @@ body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
-    font-size: small;
+    font-size: medium;
 }
 
 header {
+    position: fixed;
     text-align: center;
     padding: 10px;
     background-color: #f8f8f8;
-    /*position: fixed; */
+    background-image: url(./im/header-image.png);
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    z-index: 20000000000000000000000000;
+
 } 
 
+.icon-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.bottom-action-buttons{
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    right: 200px;
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+}
 
 .info-card {
     position: absolute;
     width: 400px;
     height: 150px;
-    top: 120px;
+    bottom: -10px;
     left: 1px;
     display: flex;
-    align-items: center;
-    background-color: gray;
+    align-items: start;
+    justify-content: center;
+    background-color: #F0EFF9;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -30,18 +53,39 @@ header {
     font-family: 'Montserrat', sans-serif;
 }
 
+.info-card2 {
+    position: absolute;
+    width: 250px;
+    height: 100px;
+    bottom: -10px;
+    right: 1px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background-color: #F0EFF9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
 .info-card .avatar {
     width: 50px;
-    height: 50px;
+    height:auto;
     border-radius: 50%;
     margin-right: 10px;
 }
 
 .user-info {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; */
+    text-align: center;
+
 }
+
 
 .user-name {
     font-size: 1em;
@@ -86,6 +130,7 @@ header {
 }
 
 .left-sidebar {
+    margin-top: 15px;
     margin-right: auto;
     font-family: 'Montserrat', sans-serif;
 }
@@ -95,6 +140,41 @@ header {
     font-family: 'Montserrat', sans-serif;
     align-items: start;
     padding-left: 45px;
+    height: 540px;
+    overflow-y: scroll; 
+}
+
+
+
+*::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  *::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #f0f0f0;   
+}
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: pink;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    height: 30px;
+  }
+  
+
+
+.menu{
+    list-style: none;
+    align-content: start;
+    text-align: start;
+    font-style: italic;
+
+}
+
+.menu li{
+    margin-bottom: 10px;
 }
 
 .card, .publication-space, .about-location {
@@ -106,7 +186,13 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-family: 'Montserrat', sans-serif;
     border-color: red;
-    align-items: center;
+}
+
+.about-location {
+    height: 400px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
 }
 
 .card textarea {
@@ -137,13 +223,15 @@ header {
 }
 
 .forum-banner {
-    background-color: #cacfd3;
-    color: #fff;
+    background-color: white;
+    color: black;
     text-align: center;
+    height: 250px;
     padding: 20px;
     border-radius: 8px;
+    border: 1px solid red;
     margin-bottom: 20px;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1.5em;
     font-family: 'Montserrat', sans-serif;
 }
@@ -229,6 +317,13 @@ header {
     margin-bottom: 15px;
 }
 
+.publication-header2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-direction: column;
+}
+
 .testimonial-avatar{
     width: 60px;
     height: 60px;
@@ -266,6 +361,11 @@ header {
     color: #333;
 }
 
+
+.publication-text2 {
+    text-align: center;
+} 
+
 .others-users {
     width: 100%;
     max-width: 600px; 
@@ -302,23 +402,57 @@ header {
     margin-bottom: 20px;
 }
 
-.users-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 100px); 
-    gap: 10px; 
-    margin-bottom: 20px;
-    justify-content: center; 
-}
+
 
 .user {
-    width: 100px; 
+    width: 100px;
+    height: 150px; 
 }
 
 .user img {
-    width: 100%; 
-    height: 100px; 
-    border-radius: 8px; 
-    object-fit: cover; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 300px;
+}
+
+.gallery-item {
+    min-width: 50%;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.chevron {
+    font-size: 5em;
+    color: #ff69b4;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.chevron.left {
+    left: -15px;
+}
+
+.chevron.right {
+    right: -15px;
 }
 
 .pagination {
@@ -342,11 +476,9 @@ header {
 }
 
 .users-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; 
+    display: flex;
     margin-bottom: 20px;
-    justify-items: center; 
+    justify-content: center; 
 } 
 
 .publication-text {
@@ -357,6 +489,7 @@ header {
 .publication-avatar {
     width: 60px;
     height: 60px;
+    margin-right: 10px;
     border-radius: 50%;
     border: 2px solid #ddd;
     object-fit: cover;
@@ -369,9 +502,13 @@ header {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     color: #333;
-    border: 1px solid #ccc;
     border-radius: 4px;
     padding: 5px;
+}
+
+.search-bar input{
+    outline: none;
+    background: inherit;
 }
 
 .search-bar i {
@@ -406,4 +543,19 @@ header {
     justify-content: center;
     align-items: center;
     height: 10px; 
+}
+
+.other-users-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    
+}
+
+
+.bi-house {
+    font-size: 2.5em;
 }
